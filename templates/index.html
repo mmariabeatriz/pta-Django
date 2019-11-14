@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPG</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+
+<body>
+        <div class="apresentacao">
+            <h3>Um guia curto e extremamente raso sobre</h3>
+            <h1>RPG de mesa</h1>
+            <a class="ilustRPG" href="#">
+                <img src="davide-lazzoni-dnd-party.jpg" alt="">
+            </a>
+        </div>
+        <div class="conteudo">
+           <div class="descricao">
+                <h5>Podemos definir RPG como jogos de interpretação de papéis. Papéis esses que representam personagens fictícios, 
+                    controlados pelos jogadores, interagindo em um universo próprio, que pode ser totalmente ficcional ou não. 
+                    Aventuras medievais, viagens no espaço, cachorros lutando contra monstros, tudo vale para quem quer jogar RPG. 
+                    O importante é que cada jogador, representado por um personagem, ajude a construir uma narrativa baseada em decisões 
+                    próprias, desafios e interpretação. Diferente de alguns jogos de videogame e tabuleiro, o RPG costuma ser um jogo 
+                    intrinsecamente colaborativo e social, muito mais do que competitivo. Normalmente, todos os jogadores se aventuram 
+                    como um único grupo, com interesses em comum, e que buscam resolver os desafios do jogo em conjunto, raramente tendo 
+                    vencedores e perdedores.
+                </h5>
+           </div>
+            <div class="classesList">
+                <h3>Algumas classes que se pode escolher para montar seu personagem estão listadas abaixo:</h3>
+                <ul>
+                   {% block content %}
+                   {{ object_list }}
+                    {% for instance in object_list %}
+                        <p>{{ instance.nome }} - {{instance.caracteristica }}</p>
+                   {% endblock %}
+                </ul>
+            </div>
+        </div>
+    </div>
+            
+</body>
+</html>
